@@ -1,4 +1,6 @@
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join }  = require('path');
 const sass = require('sass');
@@ -45,15 +47,21 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin([
+      { from: 'public' }
+    ]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       'jQuery': 'jquery',
       'Backbone': 'backbone',
-      _: 'underscore'
+      _: 'lodash',
+      'underscore': 'lodash'
     }),
     new HtmlWebpackPlugin({
+      description: 'this is a really great website!',
       title: 'Backbone starter application',
-      template: 'src/index.hbs',
+      template: 'src/index.hbs'
     })
   ],
   devtool: 'source-map',

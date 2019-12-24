@@ -47,11 +47,13 @@ module.exports = {
       $: 'jquery',
       'jQuery': 'jquery',
       'Backbone': 'backbone',
-      _: 'underscore'
+      _: 'lodash',
+      'underscore': 'lodash'
     }),
     new HtmlWebpackPlugin({
+      description: 'this is a really great website!',
       title: 'Backbone starter application',
-      template: 'src/index.hbs',
+      template: 'src/index.hbs'
     })
   ],
   devtool: 'source-map',
@@ -60,7 +62,7 @@ module.exports = {
     }
   },
   devServer: {
-    contentBase: 'dist',
+    contentBase: 'public',
     historyApiFallback: true,
     host: '0.0.0.0'
   }
