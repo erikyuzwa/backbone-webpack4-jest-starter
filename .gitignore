@@ -1,0 +1,11 @@
+# App generated files / folders
+node_modules/
+dist/
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+package-lock.json
+yarn.lock

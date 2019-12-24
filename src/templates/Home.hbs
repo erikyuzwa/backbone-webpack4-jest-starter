@@ -1,0 +1,19 @@
+{{> partials/Header}}
+
+<main class="container" id="home-page">
+    <h1>{{title}}</h1>
+
+    <ul class="row post-list">
+        {{#each posts}}
+            <li class="col-md-3 post-list-item">
+                <div class="post-item">
+                    <p class="post-date">posted: <em>{{this.date}}</em></p>
+                    <p class="post-title">{{this.title}}</p>
+                    <p class="post-content">{{this.content}}</p>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</main>
+
+{{> partials/Footer}}
