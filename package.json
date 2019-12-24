@@ -1,6 +1,6 @@
 {
   "name": "backbone-webpack4-jest-starter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A starter project for Backbone.js with ES6, Webpack4, Handlebars, Bootstrap and Jest libraries.",
   "scripts": {
     "build": "node node_modules/webpack/bin/webpack --config webpack.config.js",
