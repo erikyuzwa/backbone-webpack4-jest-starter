@@ -1,3 +1,5 @@
+import 'lodash';
+import 'bootstrap';
 import Backbone from 'backbone';
 import Router from './Router';
 
