@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { join }  = require('path');
 const sass = require('sass');
 
@@ -29,7 +30,12 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: true
+            },
+          },
           'css-loader',
           'postcss-loader',
           {
@@ -38,7 +44,7 @@ module.exports = {
               implementation: sass
             }
           }
-        ]
+        ],
       }
     ]
   },
@@ -54,6 +60,10 @@ module.exports = {
       description: 'this is a really great website!',
       title: 'Backbone starter application',
       template: 'src/index.hbs'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     })
   ],
   devtool: 'source-map',
