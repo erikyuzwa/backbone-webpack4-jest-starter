@@ -10,7 +10,7 @@ module.exports = {
   entry: join(__dirname, './src/entry.js'),
   output: {
     path: join(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -64,9 +64,7 @@ module.exports = {
       template: 'src/index.hbs'
     })
   ],
-  devtool: 'source-map',
   resolve: {
-    alias: {
-    }
+    extensions: ['.js', '.mjs']
   }
 };
