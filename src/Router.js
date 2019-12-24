@@ -15,12 +15,10 @@ export default Backbone.Router.extend({
   },
 
   home() {
-    console.log(this.routes);
     showView(new Home());
   },
 
   about() {
-    debugger;
     showView(new About());
   }
 
