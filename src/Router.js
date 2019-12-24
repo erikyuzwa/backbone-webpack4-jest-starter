@@ -11,9 +11,6 @@ export default Backbone.Router.extend({
 
   routes: Routes,
 
-  initialize() {
-  },
-
   home() {
     showView(new Home());
   },
